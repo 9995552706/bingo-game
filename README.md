@@ -178,10 +178,6 @@ This project is licensed under the ISC License.
 - Real-time communication powered by [Socket.IO](https://socket.io/)
 - Web framework by [Express.js](https://expressjs.com/)
 
-## 📞 Support
-
-If you have any questions or need help, please open an issue on GitHub.
-
 ---
 
 **Happy Bingo! 🎲**
