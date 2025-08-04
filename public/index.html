@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bingo Game</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+
+    /* Form and Buttons */
+    input[type="text"] {
+      padding: 10px;
+      margin: 10px;
+      width: 80%;
+      max-width: 300px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* Bingo Board Styles */
+    #bingo-board {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      justify-content: center;
+      margin: 20px auto;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .bingo-button {
+      padding: 20px;
+      font-size: 1.5rem;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .bingo-button:disabled {
+      background-color: #ccc;
+    }
+
+    /* Leaderboard */
+    #leaderboard {
+      margin-top: 20px;
+      list-style: none;
+      padding: 0;
+      font-size: 1.1rem;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      button {
+        padding: 12px 20px;
+        font-size: 1rem;
+      }
+
+      input[type="text"] {
+        width: 90%;
+      }
+
+      #bingo-board {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .bingo-button {
+        padding: 15px;
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #bingo-board {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .bingo-button {
+        font-size: 1rem;
+        padding: 12px;
+      }
+
+      input[type="text"] {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Bingo Game</h1>
+    <input id="name" type="text" placeholder="Enter your name">
+    <input id="game-id" type="text" placeholder="Enter game ID (if joining)">
+    <button id="create-game">Create Game</button>
+    <button id="join-game">Join Game</button>
+    <button id="start-game" style="display:none">Start Game</button>
+    <p id="generateid"></p>
+    <p id="message"></p>
+    <div id="bingo-board"></div>
+    <ul id="leaderboard"></ul>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>

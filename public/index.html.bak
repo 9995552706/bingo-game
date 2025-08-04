@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bingo Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    #bingo-board {
+      display: grid;
+      grid-template-columns: repeat(5, 50px);
+      gap: 10px;
+      justify-content: center;
+      margin: 20px auto;
+    }
+    .bingo-button {
+      width: 50px;
+      height: 50px;
+      font-size: 18px;
+    }
+    #leaderboard {
+      margin-top: 20px;
+      list-style: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Bingo Game</h1>
+    <input id="name" type="text" placeholder="Enter your name">
+    <input id="game-id" type="text" placeholder="Enter game ID (if joining)">
+    <button id="create-game">Create Game</button>
+    <button id="join-game">Join Game</button>
+    <button id="start-game" style="display:none">Start Game</button>
+    <p id="message"></p>
+    <div id="bingo-board"></div>
+    <ul id="leaderboard"></ul>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
