@@ -26,7 +26,7 @@ A fun and interactive multiplayer Bingo game built with Node.js, Express, and So
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/99995552706/bingo-game
+   git clone https://github.com/iam-vivekus/bingo-game
    cd bingo-game
    ```
 
